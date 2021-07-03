@@ -1,0 +1,512 @@
+body{
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #23d5ab, #6bcaec, #b782f3, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.navbar{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+.maincontainer
+{
+    width: 302px;
+    height: 299px;
+    margin: 30px;
+    float: left; /* stack each div horizontally */
+    align-content: center;
+    justify-content: center;
+}
+
+img
+{
+   border-radius: 10px;
+}
+
+.back h2
+{
+    position: absolute;
+}
+
+.back > a
+{
+    position: absolute;
+    top: 50px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.front h2
+{
+    position: absolute;
+    padding: 10px;
+    top: 200px;
+    color: #000;
+}
+
+/* style the maincontainer class with all child div's of class .front */
+.maincontainer > .front
+{
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    
+    width: 302px;
+    height: 290px;
+    
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+/* style the maincontainer class with all child div's of class .back */
+.maincontainer > .back
+{
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: #262626;
+    color: #fff;
+    width: 302px;
+    height: 290px;
+    border-radius: 10px;
+    padding: 5px;
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+.maincontainer:hover > .front
+{
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.maincontainer:hover > .back
+{
+    transform: perspective(600px) rotateY(0deg);
+}
+.container > .section-2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+.container > .section-2 > .card{
+    border: 2px black solid;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: 5px 10px rgb(87, 80, 80);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.container > .section-2 > .card:hover{
+    background-color: teal;
+    color: white;
+    border: 2px white solid;
+}
+.container > .section-3{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+.container > .section-3 > .card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 400px;
+    background: #000;
+    margin-top: 50px;
+}
+.container > .section-3 > .card .image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.container > .section-3 > .card .image img {
+    width:100%;
+    height: 100%;
+    transition: .5s;
+}
+.container > .section-3 > .card:hover .image img {
+    opacity: .5;
+    transform: translateX(30%);/*100%*/
+}
+.container > .section-3 > .card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;/*100%*/
+    height: 100%;
+    background: teal;
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+}
+.container > .section-3 > .card:hover .details {
+    transform: perspective(2000px) rotateY(0deg);
+}
+.container > .section-3 > .card .details .center {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.container > .section-3 > .card .details .center h1 {
+    margin: 0;
+    padding: 0;
+    color: #ff3636;
+    line-height: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.container > .section-3 > .card .details .center h1 span {
+    font-size: 14px;
+    color: #262626;
+}
+.container > .section-3 > .card .details .center p {
+    margin: 10px 0;
+    padding: 0;
+    color: #262626;
+}
+.container > .section-3 > .card .details .center ul {
+    margin: 10px auto 0;
+    padding: 0;
+    display: table;
+}
+.container > .section-3 > .card .details .center ul li {
+    list-style: none;
+    margin: 0 5px;
+    float: left;
+}
+.container > .section-3 > .card .details .center ul li a {
+    background: #262626;
+    color: #fff;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transform: .5s;
+    border-radius: 5px;
+}
+.container > .section-3 > .card .details .center ul li a:hover {
+    background: #ff3636;
+}
+footer{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+    margin-top: 100px;
+}
+footer > .footer-right > a > i{
+    margin: 15px;
+}
+.container > .login , .container > .register{
+    text-align: center;
+    margin: 200px 0px;
+}
+.container > .login > h3 > a , .container > .register > h3 > a{
+    text-decoration: none;
+}
+.form > h3{
+    text-align: center;
+    margin: 30px;
+}
+form{
+    border: 2px black solid;
+    width: 400px;
+}
+label{
+    font-size: 25px;
+}
+#admin_name , #admin_pass , .btn , #admin_cpass , #admin_phone{
+    font-size: 20px;
+    margin: 10px;
+}
+.btn{
+    background-color: teal;
+    color: white;
+    border-radius: 20px;
+}
+#main{
+    width:600px;
+    height:auto;
+    overflow:hidden; 
+    padding-bottom:20px; 
+    margin-left:auto; 
+    margin-right:auto; 
+    border-radius:5px;
+    padding-left:10px;
+    margin-top:100px;
+    border-top:3px double #f1f1f1; 
+    border-bottom:3px double #f1f1f1; 
+    padding-top:20px;
+    }
+    
+    #main table
+    {
+        font-family:"Comic Sans MS", cursive;
+    }
+    /* css code for textbox */
+    #main .tb{
+    height:28px;
+    width:230px;
+    border:1px solid #f26724;
+    color:#fd7838;
+    font-weight:bold;
+    border-left:5px solid #f7f7f7;
+    opacity:0.9;
+ }
+    
+    #main .tb:focus{
+        height:28px; 
+        border:1px solid #f26724; 
+        outline:none; 
+        border-left:5px solid #f7f7f7;
+    }
+
+    /* css code for button*/
+    #main .btn{
+    width:150px;
+    height:32px; 
+    outline:none;  
+    color:#f7f7f7; 
+    font-weight:bold; 
+    border:0px solid #f26724; 
+    text-shadow: 0px 0.5px 0.5px #fff; 
+    border-radius: 2px; 
+    font-weight: 600;
+    color: #f26724; 
+    letter-spacing: 1px; 
+    font-size:14px; 
+    background-color:#f1f1f1; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;
+}
+  
+    #main .btn:hover
+    {
+    background-color:#f26724; 
+    outline:none;  
+    border-radius: 2px; 
+    color:#f1f1f1; 
+    border:1px solid #f1f1f1;
+    -webkit-transition: 1s; 
+    -moz-transition: 1s; 
+    transition: 1s; 
+}
+
+.main{
+    width:960px;
+    margin:1px auto;
+    display:block;
+    overflow:hidden;
+}
+
+.header{}
+
+.header img{
+    width:960px;
+    height:250px;
+}
+
+.mainmenu{
+    background: rgb(125, 233, 233);
+    overflow:hidden;
+}
+.mainmenu ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.mainmenu ul li{
+    float:left;
+    border-right:2px solid #ddd;
+}
+.mainmenu ul li a{
+    display:block;
+    color:#000;
+    padding:10px 46.5px;
+    text-decoration:none;
+}
+.mainmenu ul li a:hover{
+    background:#fff;
+}
+
+.maincontent{
+    margin-top:40px;
+} 
+
+
+.slider{}
+
+.slider img{
+    float: right;
+    margin-left: 10px;
+    width: 400px;
+    height: 280px;
+    margin-top: 40px;
+
+}
+
+ .maincontent h1 {
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 35px;
+     color: rgb(74, 74, 80);
+ }
+
+ .maincontent p{
+     font-size: 17px;
+ }
+
+ .b ul {
+ 
+     font-size: 17px;
+ }
+ .b h1{
+     font-size: 35px;
+ }
+
+ .b img{
+    float: left;
+    margin-right: 35px;
+    width: 400px;
+    height: 290px;
+    margin-top: 40px;
+ }
+
+
+ * {margin:0;padding:0}
+
+
+.c p{
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+
+tr:hover {
+    background-color:#beb7b7;
+}
+
+.myForm {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 2em;
+    margin: auto;
+    width: 1000px;
+    }
+    
+    .myForm fieldset {
+    border: none ;
+    padding:0;
+    }
+    
+    .myForm legend,
+    .myForm label {
+    padding: 0.2em;
+    font-weight: bold;
+    font-size: 1.0em;
+    }
+    
+    .myForm label.choice {
+    font-size: 0.9em;
+    font-weight: normal;
+    }
+    
+    .myForm label {
+    text-align: left;
+    display: block;
+    }
+    
+    .myForm input[type="text"],
+    .myForm input[type="tel"],
+    .myForm input[type="email"],
+    .myForm input[type="password"],
+    .myForm input[type="datetime-local"],
+    .myForm select,
+    .myForm textarea {
+    float: right;
+    width: 60%;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.0em;
+    }
+    
+    .myForm textarea {
+    height: 100px;
+    }
+    
+    .myForm input[type="radio"],
+    .myForm input[type="checkbox"] {
+    margin-left: 40%;
+    }
+    
+    .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: rgb(157, 147, 173);
+    border: none;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-top: 1.8em;
+    }
+    
+    .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+    }
+
+ #table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
